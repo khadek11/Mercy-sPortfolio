@@ -10,7 +10,7 @@ import Tilt from "react-parallax-tilt";
 
 function About() {
   return (
-    <Container fluid className="about-section">
+    <Container fluid className="about-section pt-[10px] md:pt-[30px]">
       <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>

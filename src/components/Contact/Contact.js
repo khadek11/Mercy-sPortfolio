@@ -47,7 +47,7 @@ export default function Contact() {
   };
   return (
     <>
-      <Container className="containerForm pt-[130px] md:pt-[100px]">
+      <Container className="containerForm pt-[100px] md:pt-[100px]">
         <Particle />
         <Row className="flex flex-col-reverse md:flex-row">
           <Col md={6}>

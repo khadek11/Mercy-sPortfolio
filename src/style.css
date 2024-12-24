@@ -71,27 +71,36 @@ button:focus {
   background: rgba(222, 130, 235, 0.911);
   border-radius: 12px;
 }
-
-/* --------- */
-/* Navbar Section  */
-/* --------- */
 .sticky {
-  background-color: rgba(245, 245, 245, 0.192);
+  background-color: rgba(245, 245, 245, 0.425);
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
   color: white;
+  z-index: 1000;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
   color: white;
   font-weight: bolder;
+  z-index: 1000;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-
+.navwrapp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  display: hidden;
+}
 .navbar-toggler {
   position: relative !important;
   background-color: transparent !important;
@@ -109,7 +118,6 @@ button:focus {
   left: 0 !important;
   opacity: 1 !important;
 }
-
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: 0 !important;
@@ -142,78 +150,25 @@ button:focus {
   transform: rotate(-135deg) !important;
   opacity: 0.9 !important;
 }
-
-@media (max-width: 767px) {
-  .navbar {
-   padding-top: 0.8px;
-   padding-bottom: 0.8px;
-   
-  font-size: 1.4rem !important;
-  background-color: grey !important;
-  }
-  .navbar-nav .nav-item a::after {
-    display: none !important;
-  }
-}
-
-.logo {
-  height: 50px !important;
-  width: 50px !important;
-}
-
-.navbar-nav .nav-link {
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-.nav-link {
-  padding: 0.8rem 1rem !important;
-}
-
-@media (max-width: 767px) {
-  .nav-link {
-    padding: 0.7rem 1rem !important;
-  }
-}
-
 .navbar-nav .nav-item {
   position: relative;
-  margin-left: 20px;
+ 
 }
-
 .navbar-nav .nav-item a {
-  font-weight: 800;
   transition: all 0.3s ease-out 0s;
   position: relative;
   z-index: 1;
 }
+.nav-item:hover{
+  border: 1px solid #8a49a8;
+  border-radius: 15px;
 
-.navbar-nav .nav-item a::after {
-  content: "";
-  position: relative;
-  display: block;
-  height: 5px;
-  width: 0;
-  border-radius: 16px;
-  background: #c95bf5;
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
+}
+.nav-item:active{
+  background-color: #3a0250;
+  border-radius: 15px;
 }
 
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
-  color: #3a0250;
-}
-.background {
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
-
-/* --------- */
-/* Home section */
-/* --------- */
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
   animation-duration: 2.1s; /* Change to speed up or slow down */
@@ -454,7 +409,6 @@ button:focus {
 }
 .about-section {
   position: relative !important;
-  padding-top: 50px !important;
   padding-bottom: 30px !important;
   color: white !important;
 }

@@ -1,67 +1,57 @@
-import React, { useState } from "react";
-import { useTheme } from "../ThemeContext";
+import React , { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import { useTheme } from "../ThemeContext";
 import logo from "../Assets/code.jpg";
-import { Link } from "react-router-dom";
+import { Sun, Moon } from "lucide-react";
 import { IoIosContact } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import { Sun, Moon } from "lucide-react";
 
-import { Row } from "react-bootstrap";
 
-function NavBar() {
+export default function NavBar() {
   const { textColor, changeTextColor } = useTheme();
-
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const { isDark, toggleTheme } = useTheme();
-
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
-
-  return (
-    <Navbar
+  const location = useLocation();
+  return(
+    <>
+  
+  <Navbar 
       expanded={expand}
       fixed="top"
       expand="md"
-      className={`${navColour ? "sticky" : "navbar"} ${
+      className={`w-full ${navColour ? "sticky" : "navbar"} ${
         isDark ? " sticky" : "text-black"
-      }`}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluidd logo" alt="brand" />
-        </Navbar.Brand>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/"
-                onClick={() => updateExpanded(false)}
-                className={`flex items-center space-x-2 ${
-                  isDark ? "text-white" : "text-black"
-                } navLinkHome`}
-              >
+      }`}>
+        <div className="hidden md:block w-full">
+        <div className="navwrapp pr-[20px] pl-[10px] ">
+          <div>
+          <img src={logo} className="img-fluidd logo w-[40px] h-[40px] rounded-full" alt="brand" />
+          </div>
+            <div className="flex gap-[20px]">
+            <Nav  defaultActiveKey="#home" className="gap-[20px] flex">
+              <Nav.Item>
+                <Nav.Link  
+                 as={Link}
+                 to="/"
+                 onClick={() => updateExpanded(false)}
+                 className={`flex items-center space-x-2 ${
+                   isDark ? "text-white" : "text-black"
+                 } navLinkHome`}
+                >
                 <AiOutlineHome style={{}} className="inline-block" />
                 <span>Home</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
@@ -75,7 +65,6 @@ function NavBar() {
                 About
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -90,7 +79,6 @@ function NavBar() {
                 Projects
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -105,24 +93,10 @@ function NavBar() {
                 Contact Me
               </Nav.Link>
             </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-        <div className="flex gap-[30px] mb-[20px] ml-[50px] mr-[30px] md:mr-[0px]">
-          <Nav.Item className="fork-btn">
-            <button
-              onClick={toggleTheme}
-              className="bottonToolkitTheme inline-block"
-            >
-              {isDark ? (
-                <Sun className="h-[30px] w-[30px] buttonToolkitSun inline-block" />
-              ) : (
-                <Moon className="h-[25px] w-[25px] buttonToolkitMoon inline-block" />
-              )}
-            </button>
-          </Nav.Item>
-          <Nav.Item className="fork-btn">
-            <Row className="colorRow">
-              <div className="w-full max-w-md  mt-[50px] mr-[30px] md:mr-[0px]">
+
+            </Nav>
+            <div className="flex gap-4 ">
+              <div className="w-full max-w-md  ">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="color"
@@ -132,22 +106,98 @@ function NavBar() {
                   />
                 </label>
               </div>
-            </Row>
-          </Nav.Item>
+              <button
+                onClick={toggleTheme}
+                className=" inline-block"
+              >
+                {isDark ? (
+                  <Sun className="h-[30px] w-[30px] buttonToolkitSun inline-block" />
+                ) : (
+                  <Moon className="h-[25px] w-[25px] buttonToolkitMoon inline-block" />
+                )}
+              </button> 
+             
+          </div> 
+            </div>
+       </div>
+       
         </div>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav mr-[0px]"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-      </Container>
-    </Navbar>
-  );
-}
 
-export default NavBar;
+        <div className="block md:hidden w-full">
+        <div className="navwrapp mx-2 block lg:hidden ">
+          <div>
+          <img src={logo} className="img-fluidd logo w-[40px] h-[40px] rounded-full" alt="brand" />
+          </div>
+          <div className="flex gap-3 ">
+              <div className="w-full max-w-md  ">
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="color"
+                    value={textColor}
+                    onChange={(e) => changeTextColor(e.target.value)}
+                    className="w-8 h-8 customColor"
+                  />
+                </label>
+              </div>
+              <button
+                onClick={toggleTheme}
+                className=" inline-block"
+              >
+                {isDark ? (
+                  <Sun className="h-[30px] w-[30px] buttonToolkitSun inline-block" />
+                ) : (
+                  <Moon className="h-[25px] w-[25px] buttonToolkitMoon inline-block" />
+                )}
+              </button> 
+              <Navbar.Toggle
+                aria-controls="responsive-navbar-nav mr-[0px] relative"
+                onClick={() => {
+                  updateExpanded(!expand);
+                }}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+            </Navbar.Toggle>
+            
+          </div>
+        </div>
+        {expand && (
+      <nav className={`mt-4 absolute  ml-[250px] mr-[20px] pr-[10px] w-[150px] pl-[0px] rounded-lg ${isDark ? "bg-[#947ba0]" : "bg-[#947ba0] "}`}>
+        <ul className={`flex flex-col gap-4 `}>
+          <li>
+            <Link to="/" className={`ml-[0px] ${isDark ? "text-white" : "text-black "} ${location.pathname === "/" ? "text-blue-500" : ""}`}
+            onClick={() => updateExpanded(false)}>
+              <AiOutlineHome className="inline mr-2" /> Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={`${isDark ? "text-white" : "text-black"} ${location.pathname === "/about" ? "text-blue-500" : ""}`} onClick={() => updateExpanded(false)}>
+              <AiOutlineUser className="inline mr-2" /> About
+            </Link>
+          </li>
+          <li>
+            <Link to="/project" className={`${isDark ? "text-white" : "text-black"} ${location.pathname === "/project" ? "text-blue-500" : ""}`} onClick={() => updateExpanded(false)}>
+              <AiOutlineFundProjectionScreen className="inline mr-2" /> Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className={`${isDark ? "text-white" : "text-black"} ${location.pathname === "/contact" ? "text-blue-500" : ""}`} onClick={() => updateExpanded(false)}>
+              <IoIosContact className="inline mr-2" /> Contact Me
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    )}
+        </div>
+   
+    
+        
+    </Navbar>  
+    
+
+  
+    </>
+  )
+  
+  }
