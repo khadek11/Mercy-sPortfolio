@@ -3,6 +3,4 @@
   <a href="https://soumyajit.vercel.app/" target="_blank">Mercy Wanjiku</a>
 </h2>
 
-
 <br/>
-

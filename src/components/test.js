@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTheme } from '../ThemeContext'; 
+import { useTheme } from "../ThemeContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -8,24 +8,24 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { IoIosColorPalette } from "react-icons/io";
 import {
- 
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from "lucide-react";
 
 import { CgFileDocument } from "react-icons/cg";
 const ColorButton = () => {
-  const { textColor, changeTextColor, isColorMenuOpen, toggleColorMenu } = useTheme();
+  const { textColor, changeTextColor, isColorMenuOpen, toggleColorMenu } =
+    useTheme();
 
   const colors = [
-    { name: 'Purple', value: '#3a0250' },
-    { name: 'Red', value: '#FF0000' },
-    { name: 'Gold', value: '#FFD700' },
-    { name: 'Pink', value: '#FFC0CB' },
-    { name: 'Blue', value: '#0000FF' },
-    { name: 'Green', value: '#008000' }
+    { name: "Purple", value: "#3a0250" },
+    { name: "Red", value: "#FF0000" },
+    { name: "Gold", value: "#FFD700" },
+    { name: "Pink", value: "#FFC0CB" },
+    { name: "Blue", value: "#0000FF" },
+    { name: "Green", value: "#008000" },
   ];
 
   return (
@@ -34,11 +34,13 @@ const ColorButton = () => {
         onClick={toggleColorMenu}
         className=" rounded-md bg-gray-100 hover:bg-gray-200 flex items-center gap-2"
       >
-        <div 
-          className="w-4 h-4 rounded-full" 
-          style={{ backgroundColor: textColor }} 
+        <div
+          className="w-4 h-4 rounded-full"
+          style={{ backgroundColor: textColor }}
         />
-        <span><IoIosColorPalette /></span>
+        <span>
+          <IoIosColorPalette />
+        </span>
       </Button>
 
       {isColorMenuOpen && (
@@ -50,12 +52,10 @@ const ColorButton = () => {
                 onClick={() => changeTextColor(color.value)}
                 className=" "
               >
-                <div 
-                  className="" 
-                  style={{ backgroundColor: color.value }} 
-                >
-                  
-                </div>
+                <div
+                  className=""
+                  style={{ backgroundColor: color.value }}
+                ></div>
                 <span className="">{color.name}</span>
               </button>
             ))}
@@ -78,7 +78,6 @@ const ColorButton = () => {
 };
 
 function NavBar() {
-  
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const { isDark, toggleTheme } = useTheme();
@@ -98,12 +97,11 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={`${navColour ? "sticky" : "navbar"} ${isDark ? ' sticky' : 'text-black'}`}
+      className={`${navColour ? "sticky" : "navbar"} ${isDark ? " sticky" : "text-black"}`}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
           <img src={logo} className="img-fluidd logo" alt="brand" />
-         
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -117,8 +115,13 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item >
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)} className={`${isDark ? "text-white" : "text-black"}`}>
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => updateExpanded(false)}
+                className={`${isDark ? "text-white" : "text-black"}`}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -130,7 +133,7 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
                 className={`${isDark ? "text-white" : "text-black"}`}
               >
-                <AiOutlineUser style={{ marginBottom: "2px"}} /> About
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
@@ -140,7 +143,6 @@ function NavBar() {
                 to="/project"
                 onClick={() => updateExpanded(false)}
                 className={`${isDark ? "text-white" : "text-black"}`}
-                
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
@@ -160,25 +162,26 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item className="fork-btn">
+              <Button
+                onClick={toggleTheme}
+                className={`p-2 rounded-full transition-all duration-300 ${
+                  isDark
+                    ? "bg-gray-700 text-yellow-400"
+                    : "bg-gray-100 text-gray-800"
+                } hover:scale-110`}
+              >
+                {isDark ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </Button>
+            </Nav.Item>
 
             <Nav.Item className="fork-btn">
-            <Button
-          onClick={toggleTheme}
-          className={`p-2 rounded-full transition-all duration-300 ${
-            isDark ? 'bg-gray-700 text-yellow-400' : 'bg-gray-100 text-gray-800'
-          } hover:scale-110`}
-        >
-          {isDark ? (
-            <Sun className="h-5 w-5" />
-          ) : (
-            <Moon className="h-5 w-5" />
-          )}
-            </Button>
-         </Nav.Item>
-
-         <Nav.Item className="fork-btn">
-        <ColorButton />
-         </Nav.Item>
+              <ColorButton />
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

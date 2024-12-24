@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   motion,
@@ -15,70 +15,65 @@ import {
   DiPython,
   DiGit,
 } from "react-icons/di";
-import {
-  SiNextdotjs,
-  SiSqlite ,
-} from "react-icons/si";
-import { RiRemixiconFill,
- } from "react-icons/ri";
- import { SiTailwindcss } from "react-icons/si";
- 
+import { SiNextdotjs, SiSqlite } from "react-icons/si";
+import { RiRemixiconFill } from "react-icons/ri";
+import { SiTailwindcss } from "react-icons/si";
 
 const items = [
   {
     id: 1,
     name: "C++",
-    Icon: CgCPlusPlus
+    Icon: CgCPlusPlus,
   },
   {
     id: 2,
     name: "JavaScript",
-    Icon: DiJavascript1
+    Icon: DiJavascript1,
   },
   {
     id: 3,
     name: "Node.js",
-    Icon: DiNodejs
+    Icon: DiNodejs,
   },
   {
     id: 4,
     name: "React",
-    Icon: DiReact
+    Icon: DiReact,
   },
   {
     id: 5,
     name: "MongoDB",
-    Icon: DiMongodb
+    Icon: DiMongodb,
   },
   {
     id: 6,
     name: "Next.js",
-    Icon: SiNextdotjs
+    Icon: SiNextdotjs,
   },
   {
     id: 7,
     name: "Git",
-    Icon: DiGit
+    Icon: DiGit,
   },
   {
     id: 8,
     name: "Python",
-    Icon: DiPython
+    Icon: DiPython,
   },
   {
     id: 9,
     name: "Remix",
-    Icon: RiRemixiconFill
+    Icon: RiRemixiconFill,
   },
   {
     id: 10,
     name: "SQLite",
-    Icon:  SiSqlite
+    Icon: SiSqlite,
   },
   {
     id: 11,
     name: "Tailwindcss",
-    Icon: SiTailwindcss 
+    Icon: SiTailwindcss,
   },
 ];
 
@@ -89,12 +84,12 @@ const AnimatedTooltip = ({ items }) => {
 
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
+    springConfig,
   );
 
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig
+    springConfig,
   );
 
   const handleMouseMove = (event) => {
@@ -111,10 +106,13 @@ const AnimatedTooltip = ({ items }) => {
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <div className="tech-iconned text-2xl md:text-6xl" onMouseMove={handleMouseMove}>
+          <div
+            className="tech-iconned text-2xl md:text-6xl"
+            onMouseMove={handleMouseMove}
+          >
             <item.Icon />
           </div>
-          
+
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div

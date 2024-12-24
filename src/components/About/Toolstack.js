@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import {
   motion,
   useTransform,
@@ -14,56 +14,50 @@ import {
   SiNetlify,
   SiRender,
 } from "react-icons/si";
-import { 
-  FaGithub,
-  FaWindows
- } from "react-icons/fa";
- import { FaBootstrap } from "react-icons/fa";
-
-
+import { FaGithub, FaWindows } from "react-icons/fa";
+import { FaBootstrap } from "react-icons/fa";
 
 const items = [
   {
     id: 1,
     name: "Windows",
-    Icon: FaWindows
+    Icon: FaWindows,
   },
   {
     id: 2,
     name: "VS Code",
-    Icon: SiVisualstudiocode 
+    Icon: SiVisualstudiocode,
   },
   {
     id: 3,
     name: "Postman",
-    Icon: SiPostman
+    Icon: SiPostman,
   },
   {
     id: 4,
     name: "Vercel",
-    Icon: SiVercel
+    Icon: SiVercel,
   },
   {
     id: 5,
     name: "Netlify",
-    Icon: SiNetlify
+    Icon: SiNetlify,
   },
   {
     id: 6,
     name: "Render",
-    Icon: SiRender
+    Icon: SiRender,
   },
   {
     id: 7,
     name: "Github",
-    Icon: FaGithub 
+    Icon: FaGithub,
   },
   {
     id: 8,
     name: "Bootstrap",
-    Icon:  FaBootstrap
+    Icon: FaBootstrap,
   },
-  
 ];
 
 const AnimatedTooltip = ({ items }) => {
@@ -73,12 +67,12 @@ const AnimatedTooltip = ({ items }) => {
 
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
+    springConfig,
   );
 
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig
+    springConfig,
   );
 
   const handleMouseMove = (event) => {
@@ -95,10 +89,13 @@ const AnimatedTooltip = ({ items }) => {
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <div className="tech-iconned text-2xl md:text-6xl" onMouseMove={handleMouseMove}>
+          <div
+            className="tech-iconned text-2xl md:text-6xl"
+            onMouseMove={handleMouseMove}
+          >
             <item.Icon />
           </div>
-          
+
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { Row, Col } from '@/components/ui/row';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import React, { useState } from "react";
+import { Row, Col } from "@/components/ui/row";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -20,22 +20,22 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/movvqbya', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/movvqbya", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formState)
+        body: JSON.stringify(formState),
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
-        setFormState({ name: '', email: '', message: '' });
+        setSubmitStatus("success");
+        setFormState({ name: "", email: "", message: "" });
       } else {
-        setSubmitStatus('error');
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -44,7 +44,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormState({
       ...formState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -55,8 +55,10 @@ const Contact = () => {
           <Card>
             <CardContent className="p-6">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h2 className="text-2xl font-bold text-purple-600 mb-6">Contact Me</h2>
-                
+                <h2 className="text-2xl font-bold text-purple-600 mb-6">
+                  Contact Me
+                </h2>
+
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
@@ -99,29 +101,28 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full submittButton"
-                  
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
 
-                {submitStatus === 'success' && (
+                {submitStatus === "success" && (
                   <p className="text-green-600">Message sent successfully!</p>
                 )}
-                {submitStatus === 'error' && (
-                  <p className="text-red-600">Failed to send message. Please try again.</p>
+                {submitStatus === "error" && (
+                  <p className="text-red-600">
+                    Failed to send message. Please try again.
+                  </p>
                 )}
               </form>
             </CardContent>
           </Card>
         </Col>
 
-        <Col className="md:w-1/2">
-          {/* Your existing image code here */}
-        </Col>
+        <Col className="md:w-1/2">{/* Your existing image code here */}</Col>
       </Row>
     </div>
   );

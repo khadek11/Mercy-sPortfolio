@@ -81,7 +81,6 @@ button:focus {
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
   color: white;
-  
 }
 
 .navbar {
@@ -91,7 +90,6 @@ button:focus {
   font-size: 1.2rem !important;
   color: white;
   font-weight: bolder;
-
 }
 
 .navbar-toggler {
@@ -115,7 +113,6 @@ button:focus {
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: 0 !important;
-  
 }
 
 .navbar-toggler span:nth-child(1),
@@ -157,14 +154,12 @@ button:focus {
   }
 }
 
-
 .logo {
   height: 50px !important;
   width: 50px !important;
 }
 
 .navbar-nav .nav-link {
- 
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -209,7 +204,7 @@ button:focus {
   width: 100%;
   color: #3a0250;
 }
-.background{
+.background {
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
@@ -276,7 +271,6 @@ button:focus {
 .home-content {
   padding: 9rem 0 2rem !important;
   text-align: left;
- 
 }
 
 .heading {
@@ -289,14 +283,13 @@ button:focus {
   font-size: 2.3em !important;
   padding-left: 0px !important;
   font-weight: 900;
-  
 }
 
 .main-name {
   color: #45045f;
   padding-left: 20px;
 }
-.typee{
+.typee {
   color: #3a0250;
   display: flex;
   gap: 20px;
@@ -339,7 +332,6 @@ button:focus {
   padding-bottom: 70px !important;
   padding-top: 100px !important;
 }
-
 
 .home-about-description {
   padding-top: 100px !important;
@@ -465,14 +457,12 @@ button:focus {
   color: white !important;
 }
 
-
-
 .about-activity {
   list-style: none !important;
   text-align: left !important;
   padding-left: 1px !important;
 }
-                     
+
 @media (max-width: 767px) {
   .about-img {
     padding-top: 0 !important;
@@ -484,8 +474,6 @@ button:focus {
   padding-top: 110px !important;
   padding-bottom: 30px !important;
   color: black !important;
-  
-
 }
 
 .resume {
@@ -636,12 +624,11 @@ button:focus {
 .tooltip-container {
   display: inline-flex;
   position: relative;
- 
 }
 .tooltip-container:hover .tooltip {
   display: flex;
 }
-.tooltip{
+.tooltip {
   display: none;
   position: absolute;
   top: +1rem;
@@ -652,33 +639,31 @@ button:focus {
   align-items: center;
   justify-content: center;
   background-color: black;
-  
-    border-radius: 0.375rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 0.5rem 1rem;
-    z-index: 50;  
+
+  border-radius: 0.375rem;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  z-index: 50;
 }
 .tooltip::before,
-.tooltip::after{
+.tooltip::after {
   content: "";
-    position: absolute;
-    bottom: -1px;
-    height: 1px;
-    z-index: 30;
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--tooltip-color),
-      transparent
-    );
+  position: absolute;
+  bottom: -1px;
+  height: 1px;
+  z-index: 30;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--tooltip-color),
+    transparent
+  );
 }
 .tooltip-container {
   position: relative;
   display: inline-block;
- 
- 
-  
 }
 
 .tooltip-name {
@@ -707,11 +692,8 @@ button:focus {
   display: flex;
   justify-content: center;
   margin-top: 5px;
-
- 
-  
 }
-.tech-iconned{
+.tech-iconned {
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   padding: 30px !important;
   opacity: 0.93 !important;
@@ -743,37 +725,34 @@ button:focus {
 .about-sectiontooltip {
   position: relative !important;
   padding-top: 10px;
-  
 }
 
-.img-fluidd{
+.img-fluidd {
   max-height: 400px;
   border-radius: 50%;
   padding: 0px !important;
   margin-right: 0px !important;
 }
-.img-fluiddd{
- height: 400px;
+.img-fluiddd {
+  height: 400px;
   width: 400px;
   border-radius: 50%;
 }
 .project-section {
   position: relative !important;
-  
+
   padding-top: 100px !important;
   padding-bottom: 30px !important;
-  
 }
 .project-heading {
- 
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
 }
-.project-card-vieww{
+.project-card-vieww {
   background: none !important;
 }
-.project-cardd{
+.project-cardd {
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   border-radius: 5px !important;
   transition: all 0.4s ease 0s !important;
@@ -791,29 +770,26 @@ button:focus {
   overflow: hidden !important;
   border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
 }
-.project-image{
+.project-image {
   margin-top: 20px;
   border-radius: 10px;
   height: 100px;
-  width:150px;
- 
+  width: 150px;
 }
-.textbuttonn{
+.textbuttonn {
   color: red;
 }
 
-.hire{
+.hire {
   background-color: purple !important;
   margin-right: 20px;
   margin-bottom: 50px;
-  
 }
-.learn{
+.learn {
   text-decoration: none !important;
   color: white !important;
 }
-.quote-card-view { 
- 
+.quote-card-view {
   background-color: transparent !important;
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   border-radius: 5px !important;
@@ -821,40 +797,35 @@ button:focus {
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
 }
 
-.buttonColor{
-position: relative;
+.buttonColor {
+  position: relative;
 }
-.colorRow{
-position: absolute;
+.colorRow {
+  position: absolute;
 }
 
-.Customtext{
+.Customtext {
   font-size: 10px;
 }
-.bottonToolkitTheme{
+.bottonToolkitTheme {
   border-radius: 50%;
 }
-.customColor{
+.customColor {
   margin-top: 8px;
 }
 
-.contactform{
+.contactform {
   display: flex;
   flex-direction: column;
 }
 
-
-.containerForm{
- min-height: 100vh;
- position: relative;
- width: 100%;
- max-width: 400px;
-
- 
-
+.containerForm {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
 }
-.containerForm Form{
- 
+.containerForm Form {
   padding: 30px;
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   border-radius: 5px !important;
@@ -862,7 +833,6 @@ position: absolute;
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
   overflow: hidden !important;
 }
-
 
 .input-box {
   position: relative;
@@ -873,7 +843,7 @@ position: absolute;
   width: 100%;
   height: 50px;
   background: transparent !important;
-  border: 2px solid #2c4766; 
+  border: 2px solid #2c4766;
   outline: none;
   border-radius: 40px;
   font-size: clamp(0.875em, 3vw, 1em);
@@ -896,7 +866,6 @@ position: absolute;
   color: #fff;
   pointer-events: none;
   transition: all 0.3s ease;
- 
 }
 
 .input-box input:focus ~ label,
@@ -905,13 +874,12 @@ position: absolute;
   font-size: 0.85em;
   padding: 0 6px;
   color: #0ef;
- 
 }
 
-.textare-box textarea{
+.textare-box textarea {
   width: 100%;
   background: transparent !important;
-  border: 2px solid #2c4766; 
+  border: 2px solid #2c4766;
   outline: none;
   border-radius: 10px;
   font-size: clamp(0.875em, 3vw, 1em);
@@ -920,19 +888,16 @@ position: absolute;
   transition: border-color 0.3s ease;
 }
 
-
-
-.submittButton:active{
+.submittButton:active {
   color: #2c4766 !important;
   background: white !important;
 }
 
-
-.thumbnail{
+.thumbnail {
   border-radius: 50% !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-} 
-.navLinkHome{
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.navLinkHome {
   display: flex;
   flex-direction: row;
 }

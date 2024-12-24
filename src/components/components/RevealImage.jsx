@@ -18,7 +18,7 @@ const ImageRevealMaterial = shaderMaterial(
   imageRevealFragmentShader,
   (self) => {
     self.transparent = true;
-  }
+  },
 );
 
 extend({ ImageRevealMaterial });
@@ -50,7 +50,7 @@ const RevealImage = ({
     if (materialRef.current) {
       materialRef.current.uRes.set(
         isFullScreen ? viewportScale[0] : scale[0],
-        isFullScreen ? viewportScale[1] : scale[1]
+        isFullScreen ? viewportScale[1] : scale[1],
       );
       materialRef.current.uImageRes.set(width, height);
     }

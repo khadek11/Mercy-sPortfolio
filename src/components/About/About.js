@@ -14,33 +14,37 @@ function About() {
       <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
-        <Col
+          <Col
             md={5}
             style={{ paddingTop: "110px", paddingBottom: "50px" }}
             className="about-img"
           >
             <Tilt>
-            <img src={laptopImg} alt="about" className="img-fluiddd hidden lg:block w-full" />
+              <img
+                src={laptopImg}
+                alt="about"
+                className="img-fluiddd hidden lg:block w-full"
+              />
             </Tilt>
-           
           </Col>
           <Col
             md={7}
             style={{
-              justifyContent: "center", 
+              justifyContent: "center",
               paddingTop: "30px",
               paddingBottom: "50px",
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-            <strong className="purple">Know Who I Am</strong>
+              <strong className="purple">Know Who I Am</strong>
             </h1>
             <Aboutcard />
           </Col>
-         
         </Row>
         <h1 className="project-heading">
-       <strong className="purple">Full Stack Web Development Expertise </strong>
+          <strong className="purple">
+            Full Stack Web Development Expertise{" "}
+          </strong>
         </h1>
 
         <Techstack />
