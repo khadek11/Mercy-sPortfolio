@@ -28,8 +28,10 @@ export default function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={`w-full ${navColour ? "sticky" : "navbar"} ${
-        isDark ? " sticky" : "text-black"
+      className={`w-full  ${
+        isDark ? " sticky" : "text-black navbar"
+      }  ${
+        isDark ? "bg-[rgba(27, 1, 1, 0.342)]" : "bg-gray-600"
       }`}>
         <div className="hidden md:block w-full">
         <div className="navwrapp pr-[20px] pl-[10px] ">
