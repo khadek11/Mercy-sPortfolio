@@ -136,7 +136,7 @@ function NavBar() {
           </Nav.Item>
         </div>
         <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
+          aria-controls="responsive-navbar-nav mr-[0px]"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
           }}

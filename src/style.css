@@ -145,9 +145,11 @@ button:focus {
 
 @media (max-width: 767px) {
   .navbar {
-   padding: 0.8px;
+   padding-top: 0.8px;
+   padding-bottom: 0.8px;
+   
   font-size: 1.4rem !important;
-  background-color: #181a27 !important;
+  background-color: grey !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
