@@ -165,7 +165,7 @@ export default function NavBar() {
           </div>
         </div>
         {expand && (
-      <nav className={`mt-4 absolute  ml-[200px] mr-[20px] pr-[10px] w-[150px] pl-[0px] rounded-lg ${isDark ? "bg-[#947ba0]" : "bg-[#947ba0] "}`}>
+      <nav className={`mt-4 absolute w-[180px] right-0 pl-[0px] rounded-lg ${isDark ? "bg-[#947ba0]" : "bg-[#947ba0] "}`}>
         <ul className={`flex flex-col gap-4 `}>
           <li>
             <Link to="/" className={`ml-[0px] ${isDark ? "text-white" : "text-black "} ${location.pathname === "/" ? "text-blue-500" : ""}`}
