@@ -40,7 +40,7 @@ function Home2() {
           
           
             <p className="home-about-body">
-           I am a full-stack developer with a strong interest in creating practical, user-friendly applications. I also identify myself as a    <Type /><b className="purple">I enjoy working with technologies like the MERN stack, TypeScript, and CSS</b> to bring ideas to life. I’m always eager to learn and improve, whether it’s through experimenting with new tools or collaborating with others to solve challenges. I believe in building software that’s not only functional but also meaningful to its users. Let’s connect if you’re looking for a developer who’s hardworking, curious, and passionate about technology!
+           I am a full-stack developer with a strong interest in creating practical, user-friendly applications. I also identify myself as a    <Type className="sm:text-2xl"/> <br/><b  className="purple mt:[0px]">I enjoy working with technologies like the MERN stack, TypeScript, and CSS</b> to bring ideas to life. I’m always eager to learn and improve, whether it’s through experimenting with new tools or collaborating with others to solve challenges. I believe in building software that’s not only functional but also meaningful to its users. Let’s connect if you’re looking for a developer who’s hardworking, curious, and passionate about technology!
            </p>
            <Button className="hire">
             <Link to='/contact' className="learn">  Hire Me</Link>
@@ -56,7 +56,7 @@ function Home2() {
             target="_blank"
             className="hire"
           >
-            <AiOutlineDownload />
+            <AiOutlineDownload className="inline-block" />
             &nbsp;Download CV
           </Button>
           </Col>
@@ -80,7 +80,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiFillGithub />
+                  <AiFillGithub className="inline-block" />
                 </a>
               </li>
            
@@ -91,7 +91,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <FaLinkedinIn />
+                  <FaLinkedinIn className="inline-block"/>
                 </a>
               </li>
             

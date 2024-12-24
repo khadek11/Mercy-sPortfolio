@@ -8,7 +8,7 @@ function AboutCard() {
   return (
     <Card  className="bg-transparent quote-card-view">
       <Card.Body className={`${isDark ? "text-white" :  "text-black"} `}  >
-        <blockquote className="blockquote mb-0">
+        <blockquote className=" none md:blockquote mb-0 p-0 md:p-[20px]">
           <p style={{ textAlign: "justify" }}>
           Hello, I am <span className="purple">Mercy Wanjiku Kariuki from Nairobi, Kenya. </span>
          

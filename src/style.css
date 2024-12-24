@@ -303,7 +303,7 @@ button:focus {
 }
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: #68078f !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
@@ -676,7 +676,7 @@ button:focus {
 .tooltip-container {
   position: relative;
   display: inline-block;
- margin-left: 30px;
+ 
  
   
 }
@@ -715,7 +715,7 @@ button:focus {
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   padding: 30px !important;
   opacity: 0.93 !important;
-  font-size: 4.5em !important;
+
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
@@ -753,12 +753,13 @@ button:focus {
   margin-right: 0px !important;
 }
 .img-fluiddd{
-  max-height: 450px;
-  max-width: 450px;
-  border-radius: 25%;
+ height: 400px;
+  width: 400px;
+  border-radius: 50%;
 }
 .project-section {
   position: relative !important;
+  
   padding-top: 100px !important;
   padding-bottom: 30px !important;
   
@@ -842,19 +843,18 @@ position: absolute;
   flex-direction: column;
 }
 
+
 .containerForm{
- padding-top: 100px;
  min-height: 100vh;
  position: relative;
  width: 100%;
  max-width: 400px;
- padding: 100px;
 
  
 
 }
 .containerForm Form{
-  width: 80%;
+ 
   padding: 30px;
   border: 1.7px solid rgba(100, 7, 143, 0.63) !important;
   border-radius: 5px !important;
@@ -929,8 +929,33 @@ position: absolute;
 
 
 .thumbnail{
-  width: 450px !important;
-  height: 450px !important;
   border-radius: 50% !important;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+} 
+.navLinkHome{
+  display: flex;
+  flex-direction: row;
+}
+.submittButton {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #623686; /* or your desired color */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.submittButton:hover {
+  background-color: #7212c7; /* darker shade for hover */
+}
+
+.submittButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.contactform {
+  position: relative;
+  z-index: 1;
 }

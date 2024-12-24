@@ -42,28 +42,18 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={`${navColour ? "sticky" : "navbar"} ${isDark ? ' sticky' : 'text-black'}`}
+      className={ `${navColour ? "sticky" : "navbar"} ${isDark ? ' sticky' : 'text-black'}`}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
           <img src={logo} className="img-fluidd logo" alt="brand" />
          
         </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item >
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)} className={`${isDark ? "text-white" : "text-black"}`}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+            <Nav.Item>
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)} className={`flex items-center space-x-2 ${isDark ? "text-white" : "text-black"} navLinkHome`}>
+                <AiOutlineHome style={{  }} className="inline-block"/><span>Home</span>
               </Nav.Link>
             </Nav.Item>
 
@@ -74,7 +64,7 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
                 className={`${isDark ? "text-white" : "text-black"}`}
               >
-                <AiOutlineUser style={{ marginBottom: "2px"}} /> About
+                <AiOutlineUser style={{ marginBottom: "2px"}} className="inline-block" /> About
               </Nav.Link>
             </Nav.Item>
 
@@ -88,6 +78,7 @@ function NavBar() {
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
+                  className="inline-block" 
                 />{" "}
                 Projects
               </Nav.Link>
@@ -100,46 +91,61 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
                 className={`${isDark ? "text-white" : "text-black"}`}
               >
-                <IoIosContact style={{ marginBottom: "2px" }} /> Contact Me
+                <IoIosContact style={{ marginBottom: "2px" }} className="inline-block" /> Contact Me
               </Nav.Link>
             </Nav.Item>
 
 
-            <Nav.Item className="fork-btn">
-            <button
-          onClick={toggleTheme}
-          className="bottonToolkitTheme"
-        >
-          {isDark ? (
-            <Sun className="h-3 w-5 buttonToolkitSun" />
-          ) : (
-            <Moon className="h-3 w-5 buttonToolkitMoon" />
-          )}
-            </button>
-         </Nav.Item>
-
-        
-         <Nav.Item className="fork-btn">
-        
-       <Row className="colorRow">
-       
-       <div className="w-full max-w-md ">
-      <label className="flex items-center space-x-2 cursor-pointer">
-        <input
-          type="color"
-          value={textColor}
-          onChange={(e) => changeTextColor(e.target.value)}
-          className="w-8 h-8 customColor"
-        />
-      
-      </label>
-    </div>
-       </Row>
-     
-         </Nav.Item>
+           
 
           </Nav>
         </Navbar.Collapse>
+        <div className="flex gap-[30px] mb-[20px] ml-[50px]">
+        <Nav.Item className="fork-btn">
+            <button
+          onClick={toggleTheme}
+          className="bottonToolkitTheme inline-block"
+         
+        >
+          {isDark ? (
+            <Sun className="h-[30px] w-[30px] buttonToolkitSun inline-block" />
+          ) : (
+            <Moon className="h-[25px] w-[25px] buttonToolkitMoon inline-block" />
+          )}
+            </button>
+         </Nav.Item>
+         <Nav.Item className="fork-btn">
+        
+        <Row className="colorRow">
+        
+        <div className="w-full max-w-md  mt-[50px]">
+       <label className="flex items-center space-x-2 cursor-pointer">
+         <input
+           type="color"
+           value={textColor}
+           onChange={(e) => changeTextColor(e.target.value)}
+           className="w-8 h-8 customColor"
+         />
+       
+       </label>
+     </div>
+        </Row>
+      
+          </Nav.Item>
+
+        </div>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={() => {
+            updateExpanded(expand ? false : "expanded");
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </Navbar.Toggle>
+
+       
       </Container>
 
 

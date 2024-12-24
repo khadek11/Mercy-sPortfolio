@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/aboutmore.jpg";
 import Toolstack from "./Toolstack";
+import Tilt from "react-parallax-tilt";
 
 function About() {
   return (
@@ -18,7 +19,10 @@ function About() {
             style={{ paddingTop: "110px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluiddd" />
+            <Tilt>
+            <img src={laptopImg} alt="about" className="img-fluiddd hidden lg:block w-full" />
+            </Tilt>
+           
           </Col>
           <Col
             md={7}
@@ -41,7 +45,7 @@ function About() {
 
         <Techstack />
 
-        <h1 className="project-heading">
+        <h1 className="project-heading mt-5">
           <strong className="purple">Tools</strong> I use
         </h1>
         <Toolstack />

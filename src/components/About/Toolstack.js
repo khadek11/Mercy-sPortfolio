@@ -90,12 +90,12 @@ const AnimatedTooltip = ({ items }) => {
     <div className="flex flex-wrap justify-center gap-4">
       {items.map((item) => (
         <div
-          className="tooltip-container"
+          className="tooltip-container ml-[0px] md:ml-[30px]"
           key={item.id}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <div className="tech-iconned" onMouseMove={handleMouseMove}>
+          <div className="tech-iconned text-2xl md:text-6xl" onMouseMove={handleMouseMove}>
             <item.Icon />
           </div>
           
