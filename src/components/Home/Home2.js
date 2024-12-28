@@ -71,7 +71,7 @@ function Home2() {
               className="hire"
             >
               <AiOutlineDownload className="inline-block" />
-              &nbsp;Download CV
+              &nbsp;Download Resume
             </Button>
           </Col>
           <Col md={4} className="myAvtar">
