@@ -36,8 +36,13 @@ export default function NavBar() {
         <div className="hidden md:block w-full">
         <div className="navwrapp pr-[20px] pl-[10px] ">
           <div>
+          <Link to="/">
           <img src={logo} className="img-fluidd logo w-[40px] h-[40px] rounded-full" alt="brand" />
+          </Link>
+           
           </div>
+        
+          
             <div className="flex gap-[20px]">
             <Nav  defaultActiveKey="#home" className="gap-[20px] flex">
               <Nav.Item>
@@ -127,8 +132,11 @@ export default function NavBar() {
 
         <div className="block md:hidden w-full">
         <div className="navwrapp mx-2 block lg:hidden ">
-          <div>
+        <div>
+          <Link to="/">
           <img src={logo} className="img-fluidd logo w-[40px] h-[40px] rounded-full" alt="brand" />
+          </Link>
+           
           </div>
           <div className="flex gap-3 ">
               <div className="w-full max-w-md  ">
