@@ -8,7 +8,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Type from "./Type";
 import { Link } from "react-router-dom";
 import { AiOutlineDownload } from "react-icons/ai";
-import pdf from "../../Assets/Kariuki Mercy Wanjiku Resume.pdf";
+import pdf from "../../Assets/Kariuki Mercy Wanjiku Profile.pdf";
 
 function Home2() {
   const { isDark } = useTheme();
